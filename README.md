@@ -2,6 +2,8 @@
 
 Moduł Joomla wyświetlający karuzelę produktów HikaShop (UIkit Slider) z własnym CSS/JS.
 
+![Screenshot karuzeli](docs/hikashop-carousel.png)
+
 ## Wymagania
 - Joomla 4/5
 - HikaShop (produkty pobierane z tabeli `#__hikashop_product`)
@@ -57,3 +59,4 @@ Compress-Archive -Path (Join-Path $workDir '*') -DestinationPath $zipPath -Force
 
 ## Licencja
 Uzupełnij zgodnie z tym, jak chcesz publikować moduł (np. GPL-2.0-or-later).
+
