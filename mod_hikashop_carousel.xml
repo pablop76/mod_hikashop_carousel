@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension type="module" client="site" method="upgrade">
+    <name>Hikashop Carousel</name>
+    <version>1.0.1</version>
+    <author>pablop76</author>
+    <creationDate>03.12.2024</creationDate>
+    <description>Hikashop Carousel</description>
+    <namespace path="src">Pablop76\Module\Hikashopcarousel</namespace>
+    <files>
+        <folder module="mod_hikashop_carousel">services</folder>
+        <folder>src</folder>
+        <folder>tmpl</folder>
+    </files>
+    <scriptfile>script.php</scriptfile>
+    <media destination="mod_hikashop_carousel" folder="media">
+        <filename>joomla.asset.json</filename>
+        <folder>css</folder>
+        <folder>js</folder>
+    </media>
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field
+                    name="titlehikashopcarousel"
+                    type="text"
+                    default=""
+                    label="Tytuł"
+                    description=""
+                    filter="raw"
+                />
+                <field
+                    name="imagesubtitlehikashopcarousel"
+                    type="accessiblemedia"
+                    directory="stories"
+                    label="Obraz pod tytułem sekcji"
+                />
+                <field
+                    name="descriptionhikashopcarousel"
+                    type="editor"
+                    label="Krótki opis"
+                    description=""
+                    filter="raw"
+                />
+                <field
+                    name="allproductsbuttontext"
+                    type="text"
+                    default=""
+                    label="Tekst przycisku na dole sekcji"
+                    description="Jeśli pole jest puste, przycisk nie będzie wyświetlany na stronie."
+                    hint="np. WSZYSTKIE WYROBY"
+                    filter="raw"
+                />
+                <field
+                    name="hikaproduktmenuitem"
+                    type="menuitem"
+                    default=""
+                    label="Pozycja menu (Itemid) – dokąd prowadzi przycisk"
+                    description="Ustaw docelową stronę dla przycisku. Przycisk wyświetla się tylko, gdy ustawisz tekst oraz wybierzesz pozycję menu. Ten Itemid jest też używany w linkach kart produktów dla spójnego routingu."
+                    showon="allproductsbuttontext!:"
+                />
+                <field
+                    name="descriptionlength"
+                    type="number"
+                    default="100"
+                    label="Długość tekstu w opisie produktów"
+                    description=""
+                    min="1"
+                    max="300"
+                    step="1"
+                />
+            </fieldset>
+            <fieldset name="hk_corousel_options" label="Hikashop Corousel Options">
+                <field
+                    name="bgcorousellefttop"
+                    type="accessiblemedia"
+                    directory="stories"
+                    label="Obraz w tle lewa/góra"
+                />
+                <field
+                    name="bgcorouselbottomright"
+                    type="accessiblemedia"
+                    directory="stories"
+                    label="Obraz w tle prawy/dół"
+                />
+            </fieldset>
+        </fields>
+    </config>
+</extension>

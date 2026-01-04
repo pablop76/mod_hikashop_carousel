@@ -1,0 +1,27 @@
+{
+  "$schema": "https://developer.joomla.org/schemas/json-schema/web_assets.json",
+  "name": "mod_hikashop_carousel",
+  "version": "1.0.0",
+  "description": "Joomla Hikashop Carousel",
+  "license": "GPL-2.0-or-later",
+  "assets": [
+    {
+      "name": "mod_hikashop_carousel.custom-style",
+      "type": "style",
+      "uri": "mod_hikashop_carousel/custom.css",
+      "version": "1.0.0"
+    },
+    {
+      "name": "mod_hikashop_carousel.custom-js",
+      "type": "script",
+      "uri": "mod_hikashop_carousel/custom.js",
+      "dependencies": [
+        "core"
+      ],
+      "attributes": {
+        "type": "module"
+      },
+      "version": "1.0.0"
+    }
+  ]
+}

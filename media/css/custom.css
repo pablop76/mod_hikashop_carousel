@@ -1,0 +1,190 @@
+/* dla karty w sliderze hikashop */
+.hikashop-carousel-section .uk-visible-toggle[data-uk-slider].uk-padding-large{
+  padding-top: 90px !important;
+  padding-bottom: 90px !important;
+}
+
+.hikashop-card-carousel .uk-card.uk-card-default{
+  overflow: visible;
+    position: relative;
+    z-index: 1;
+    transform: translate3d(0, 0, 0);
+    transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+    -webkit-transition: -webkit-transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+    border-radius: 60px 0px 60px 0px;
+    box-shadow: none;
+  background: transparent;
+
+    /* podpowiedzi renderowania (często zmniejszają blur przy transform) */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    backface-visibility: hidden;
+  }
+
+  .hikashop-card-carousel .uk-card.uk-card-default::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 60px 0px 60px 0px;
+    background: #fff;
+    box-shadow: none;
+    transform: scale(1);
+    transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: transform;
+    z-index: 0;
+  }
+
+  .hikashop-card-carousel .uk-card.uk-card-default > *{
+    position: relative;
+    z-index: 1;
+  }
+
+  .hikashop-card-carousel .uk-card-media-top{
+    overflow: hidden;
+    border-top-left-radius: 60px;
+    border-top-right-radius: 0px;
+  }
+
+  .hikashop-card-carousel .uk-card-media-top img{
+    display: block;
+    transform: scale(1);
+    transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  @media only screen and (min-width: 960px){
+    .hikashop-carousel-section .hikashop-slider-managed .hikashop-card-carousel.is-center .uk-card-media-top img,
+    .hikashop-carousel-section [data-uk-slider]:not(.hikashop-slider-managed) .hikashop-card-carousel.uk-slide-active .uk-card-media-top img,
+    .hikashop-carousel-section [uk-slider]:not(.hikashop-slider-managed) .hikashop-card-carousel.uk-slide-active .uk-card-media-top img{
+      transform: scale(1.3);
+    }
+  }
+
+  @media only screen and (min-width: 960px){
+    /* Fallback (bez JS): środek po klasie UIkit */
+    .hikashop-carousel-section [data-uk-slider]:not(.hikashop-slider-managed) .hikashop-card-carousel.uk-slide-active .uk-card.uk-card-default,
+    .hikashop-carousel-section [uk-slider]:not(.hikashop-slider-managed) .hikashop-card-carousel.uk-slide-active .uk-card.uk-card-default{
+        z-index: 2;
+        top: 0;
+        transform: translate3d(0, -12px, 0);
+      }
+
+    .hikashop-carousel-section [data-uk-slider]:not(.hikashop-slider-managed) .hikashop-card-carousel.uk-slide-active .uk-card.uk-card-default::before,
+    .hikashop-carousel-section [uk-slider]:not(.hikashop-slider-managed) .hikashop-card-carousel.uk-slide-active .uk-card.uk-card-default::before{
+      transform: scale(1.22);
+      box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.22);
+      }
+
+    /* JS-managed: środek po klasie .is-center (bez opóźnienia pomniejszenia) */
+    .hikashop-carousel-section .hikashop-slider-managed .hikashop-card-carousel.is-center .uk-card.uk-card-default{
+      z-index: 2;
+      top: 0;
+      transform: translate3d(0, -12px, 0);
+    }
+
+    .hikashop-carousel-section .hikashop-slider-managed .hikashop-card-carousel.is-center .uk-card.uk-card-default::before{
+      transform: scale(1.22);
+      box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.22);
+    }
+  }
+  .hikashop-card-carousel h3{
+    text-align: center;
+    font-size: 16px;
+    line-height: 1.2;
+    font-weight: 600;
+    transition: none;
+  }
+
+  .hikashop-card-carousel .uk-card-body h3{
+    margin-bottom: 6px;
+  }
+
+  .hikashop-card-carousel .hikashop-card-weight{
+    text-align: center;
+    font-size: 16px;
+    line-height: 1.2;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 6px;
+    transition: none;
+  }
+  .hikashop-card-carousel .uk-card-body{
+    font-size: 12px;
+    line-height: 1.35;
+    padding: 10px 18px;
+  }
+
+  .hikashop-card-carousel .uk-card-body p{
+    margin-top: 0;
+    opacity: 0.9;
+    font-size: 14px;
+    line-height: 1.4;
+    transition: font-size 0.4s ease, line-height 0.4s ease, opacity 0.4s ease;
+  }
+
+  .hikashop-card-carousel .uk-card-body .uk-button{
+    transition: none;
+  }
+
+  @media only screen and (min-width: 960px){
+    /* Środkowy (aktualny) slajd: większy tekst + trochę więcej miejsca (ale bez animacji font-size) */
+    .hikashop-carousel-section [data-uk-slider]:not(.hikashop-slider-managed) .hikashop-card-carousel.uk-slide-active .uk-card-body,
+    .hikashop-carousel-section [uk-slider]:not(.hikashop-slider-managed) .hikashop-card-carousel.uk-slide-active .uk-card-body,
+    .hikashop-carousel-section .hikashop-slider-managed .hikashop-card-carousel.is-center .uk-card-body{
+      box-sizing: border-box;
+      padding-left: 10px;
+      padding-right: 10px;
+      width: calc(100% + 32px);
+      margin-left: -16px;
+      margin-right: -16px;
+    }
+
+    .hikashop-carousel-section [data-uk-slider]:not(.hikashop-slider-managed) .hikashop-card-carousel.uk-slide-active .uk-card-body p,
+    .hikashop-carousel-section [uk-slider]:not(.hikashop-slider-managed) .hikashop-card-carousel.uk-slide-active .uk-card-body p,
+    .hikashop-carousel-section .hikashop-slider-managed .hikashop-card-carousel.is-center .uk-card-body p{
+      font-size: 18px;
+      line-height: 1.35;
+      opacity: 1;
+      transition: opacity 0.4s ease;
+    }
+
+    .hikashop-carousel-section [data-uk-slider]:not(.hikashop-slider-managed) .hikashop-card-carousel.uk-slide-active h3,
+    .hikashop-carousel-section [uk-slider]:not(.hikashop-slider-managed) .hikashop-card-carousel.uk-slide-active h3,
+    .hikashop-carousel-section .hikashop-slider-managed .hikashop-card-carousel.is-center h3{
+      font-size: 22px;
+      line-height: 1.15;
+    }
+
+    .hikashop-carousel-section [data-uk-slider]:not(.hikashop-slider-managed) .hikashop-card-carousel.uk-slide-active .hikashop-card-weight,
+    .hikashop-carousel-section [uk-slider]:not(.hikashop-slider-managed) .hikashop-card-carousel.uk-slide-active .hikashop-card-weight,
+    .hikashop-carousel-section .hikashop-slider-managed .hikashop-card-carousel.is-center .hikashop-card-weight{
+      font-size: 22px;
+      line-height: 1.15;
+    }
+
+    /* Środkowy slajd: większy przycisk */
+    .hikashop-carousel-section [data-uk-slider]:not(.hikashop-slider-managed) .hikashop-card-carousel.uk-slide-active .uk-card-body .uk-button,
+    .hikashop-carousel-section [uk-slider]:not(.hikashop-slider-managed) .hikashop-card-carousel.uk-slide-active .uk-card-body .uk-button,
+    .hikashop-carousel-section .hikashop-slider-managed .hikashop-card-carousel.is-center .uk-card-body .uk-button{
+      font-size: 14px;
+      line-height: 1.2;
+      padding: 10px 18px;
+    }
+
+    /* Stabilizacja wysokości (bez "skakania" sekcji): stała liczba linii i rezerwa wysokości */
+    .hikashop-card-carousel .hikashop-card-title{
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      overflow: hidden;
+      min-height: 52px;
+    }
+
+    .hikashop-card-carousel .uk-card-body p{
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
+      overflow: hidden;
+      min-height: 73px;
+    }
+  }

@@ -1,0 +1,5 @@
+﻿/dist/
+/.vscode/
+*.zip
+Thumbs.db
+.DS_Store
